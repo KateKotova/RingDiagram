@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="questionnaireApp">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=cyrillic,cyrillic-ext">
+		<link rel="stylesheet" href="css/ring-diagram-styles.css">
+		<script src="js/lib/snap.svg-min.js"></script>		
+	</head>
+
+	<body>
+
+		<p><input type="button" value="Другой набор значений" onclick="changeValues()"></p>
+		<svg id="svg1" class="ring-diagram"/>
+		<p><input type="button" value="Другой набор значений" onclick="changeValues()"></p>
+		<svg id="svg2" class="ring-diagram"/>
+		<p><input type="button" value="Другой набор значений" onclick="changeValues()"></p>
+		<svg id="svg3" class="ring-diagram"/>
+		<p><input type="button" value="Другой набор значений" onclick="changeValues()"></p>
+
+
+		<script src="js/extensions/string-extensions.js"></script>	
+		<script src="js/extensions/window-extensions.js"></script>
+		<script src="js/extensions/math-extensions.js"></script>
+		<script src="js/extensions/snap-extensions.js"></script>
+
+		<script src="js/ring-diagram/ring-diagram-data.min.js"></script>
+		<script src="js/ring-diagram/ring-diagram-ids.min.js"></script>
+		<script src="js/ring-diagram/ring-diagram-svg-paths.min.js"></script>
+		<script src="js/ring-diagram/ring-diagram-svg-gradients.min.js"></script>
+		<script src="js/ring-diagram/svg-shadow-filter-css-parser.min.js"></script>
+		<script src="js/ring-diagram/ring-diagram-css-parser.min.js"></script>
+		<script src="js/ring-diagram/ring-diagram-animation.min.js"></script>	
+		<script src="js/ring-diagram/ring-diagram-center-value-css-parser.min.js"></script>
+		<script src="js/ring-diagram/ring-diagram-center-value.min.js"></script>	
+		<script src="js/ring-diagram/ring-diagram-arrow-button-css-parser.min.js"></script>
+		<script src="js/ring-diagram/ring-diagram-arrow-button.min.js"></script>
+		<script src="js/ring-diagram/ring-diagram-legends-css-parser.min.js"></script>
+		<script src="js/ring-diagram/ring-diagram-legends.min.js"></script>
+		<script src="js/ring-diagram/ring-diagram.min.js"></script>
+
+		<script src="js/example/ring-diagram-data-base.js"></script>
+		<script src="js/example/ring-diagram-data-values.js"></script>
+
+		<script src="js/controllers/ring-diagram-controller.js"></script>
+
+	</body>
+</html>

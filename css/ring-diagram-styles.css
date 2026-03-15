@@ -1,0 +1,273 @@
+/**
+ * The style sheet for the ring diagram.
+ * @see module ring-diagram
+ * @author Kate Kotova <katekotova_86@mail.ru>
+ * @copyright Kate Kotova 2017
+ */
+
+.ring-diagram {
+	stroke-linecap: round;
+	stroke-linejoin: round;
+
+	--center-x: 600;
+	--center-y: 250;
+	--unselected-inner-radius: 60;
+	--unselected-outer-radius: 90;
+	--selected-inner-radius: 68;
+	--selected-outer-radius: 105;
+
+	--selection-animation-duration: 200;
+	--ring-transformation-animation-duration: 400;
+	--opacity-animation-duration: 350;
+	--minimum-ring-arc-opacity: 0.6;
+	--child-ring-arc-color-superposition-coefficient: 0.55;
+	--ring-gradient-animation-duration: 6000;
+
+	--unselected-arc-stroke-width: 2.5;
+	--selected-arc-stroke-width: 4;
+	--sub-acr-stroke-width: 0.5;
+
+	--shadow-horizontal-shift: 0;
+	--shadow-vertical-shift: 2.5;
+	--shadow-blur: 3;
+	--shadow-color: #393C3C;
+	--shadow-opacity: 0.4;
+
+	--unselected-arc-fill-dark-color-0: #500;
+	--unselected-arc-fill-light-color-0: #A00;
+	--selected-arc-fill-dark-color-0: #900;
+	--selected-arc-fill-light-color-0: #F00;
+
+	--unselected-arc-fill-dark-color-1: #050;
+	--unselected-arc-fill-light-color-1: #0A0;
+	--selected-arc-fill-dark-color-1: #090;
+	--selected-arc-fill-light-color-1: #0F0;
+
+	--unselected-arc-fill-dark-color-2: #005;
+	--unselected-arc-fill-light-color-2: #00A;
+	--selected-arc-fill-dark-color-2: #009;
+	--selected-arc-fill-light-color-2: #00F;
+
+	--unselected-arc-fill-dark-color-3: #550;
+	--unselected-arc-fill-light-color-3: #AA0;
+	--selected-arc-fill-dark-color-3: #990;
+	--selected-arc-fill-light-color-3: #FF0;
+
+	--unselected-arc-fill-dark-color-4: #505;
+	--unselected-arc-fill-light-color-4: #A0A;
+	--selected-arc-fill-dark-color-4: #909;
+	--selected-arc-fill-light-color-4: #F0F;
+} /* .ring-diagram */
+
+.ring-diagram-ring {	
+	stroke: #393C3C;	
+	stroke-opacity: 1;
+	cursor: pointer;
+} /* .ring-diagram-ring */
+
+text {
+	stroke: none;
+	font-family: "Open Sans", Arial, sans-serif;
+	letter-spacing: -0.5px;
+	font-style: normal;
+} /* text */
+
+
+.ring-diagram-arrow-button {
+	--width: 60px; 
+	--height: 33.5px;
+	--arrow-angle: 100;
+	--vertical-margin-from-ring-center: 5;
+	--horizontal-margin-from-ring-center: -5;	
+
+	--minimum-opacity: 1;
+	--resize-animation-duration: 480;
+
+	--shadow-horizontal-shift: 0;
+	--shadow-vertical-shift: 1.8;
+	--shadow-blur: 1.5;
+	--shadow-color: #4c1536;
+	--shadow-opacity: 0.3;
+
+	cursor: pointer;
+
+	fill: #fff;
+	stroke: #8a0b55;
+	stroke-width: 2.6;
+
+	-webkit-transition: 
+		fill,
+		stroke,
+		stroke-width
+		300ms ease-in-out 0ms;
+	-moz-transition:
+		fill,
+		stroke,
+		stroke-width
+		300ms ease-in-out 0ms;
+	-o-transition:
+		fill,
+		stroke,
+		stroke-width
+		300ms ease-in-out 0ms;
+	transition:
+		fill,
+		stroke,
+		stroke-width
+		300ms ease-in-out 0ms;
+} /* .ring-diagram-arrow-button */
+
+.ring-diagram-arrow-button:hover {
+	fill: #b4006c;
+	stroke: #b4006c;
+	stroke-width: 5.5;	
+} /* .ring-diagram-arrow-button:hover */
+
+.ring-diagram-arrow-button:active {
+	fill: #8a0b55;
+	stroke: #82044f;
+	stroke-width: 2.5;	
+} /* .ring-diagram-arrow-button:hover */
+
+.ring-diagram-arrow-button-text {
+	fill: #8a0b55;
+	font-size: 16px;
+	font-weight: 700; /*700 - bold; 400 - normal*/
+	text-anchor: middle;
+
+	-webkit-transition: fill 300ms ease-in-out 0ms;
+	-moz-transition: fill 300ms ease-in-out 0ms;
+	-o-transition: fill 300ms ease-in-out 0ms;
+	transition: fill 300ms ease-in-out 0ms;
+} /* .ring-diagram-arrow-button-text */
+
+.ring-diagram-arrow-button:hover .ring-diagram-arrow-button-text {
+	fill: #fff;
+}
+
+
+.ring-diagram-center-value {	
+	--vertical-margin-from-ring-center: -9;
+
+	--text-animation-duration: 250;
+
+	--shadow-horizontal-shift: 0;
+	--shadow-vertical-shift: 1;
+	--shadow-blur: 1;
+	--shadow-color: #8e115c;
+	--shadow-opacity: 0.3;
+
+	cursor: default;
+
+	fill: #BC0071;
+	font-size: 24px;
+	font-weight: 700; /*700 - bold; 400 - normal*/
+	text-anchor: middle; 	
+
+	-webkit-transition: fill, font-size 300ms ease-in-out 0ms;
+	-moz-transition: fill, font-size 300ms ease-in-out 0ms;
+	-o-transition: fill, font-size 300ms ease-in-out 0ms;
+	transition: fill, font-size 300ms ease-in-out 0ms;	
+} /* .ring-diagram-center-value */
+
+.ring-diagram-center-value:hover {
+	fill: #d74da0;
+	font-size: 26px;
+} /* .ring-diagram-center-value:hover */
+
+
+.ring-diagram-legends {
+	fill-opacity: 1;
+
+	--extension-line-minimum-radius: 125;
+	--between-legends-minimum-distance: 15;
+	--opacity-animation-duration: 250;
+	--selection-animation-duration: 200;
+
+	--caption-vertical-margin-from-extension-line: -7;
+	--caption-horizontal-margin-from-right-extension-line: 7;
+
+	--shadow-horizontal-shift: 0;
+	--shadow-vertical-shift: 1;
+	--shadow-blur: 1;
+	--shadow-color: #323637;/*#393C3C;*/
+	--shadow-opacity: 0.3;	
+} /* .ring-diagram-legends */
+
+.ring-diagram-unselected-legend-extension-line {
+	stroke: #393C3C;
+	stroke-width: 1;
+	fill: none;
+
+	-webkit-transition: stroke, stroke-width 200ms ease-in 0ms;
+	-moz-transition: stroke, stroke-width 200ms ease-in 0ms;
+	-o-transition: stroke, stroke-width 200ms ease-in 0ms;
+	transition: stroke, stroke-width 200ms ease-in 0ms;
+} /* .ring-diagram-unselected-legend-extension-line */
+
+.ring-diagram-selected-legend-extension-line {
+	stroke: #3f3f40;
+	stroke-width: 1.5;	
+	fill: none;
+
+	-webkit-transition: stroke, stroke-width 200ms ease-in 0ms;
+	-moz-transition: stroke, stroke-width 200ms ease-in 0ms;
+	-o-transition: stroke, stroke-width 200ms ease-in 0ms;
+	transition: stroke, stroke-width 200ms ease-in 0ms;
+} /* .ring-diagram-selected-legend-extension-line */
+
+
+.ring-diagram-legends-captions {
+}
+
+.ring-diagram-legend-right-caption {
+	text-anchor: start;
+}
+
+.ring-diagram-legend-left-caption {
+	text-anchor: end;
+}
+
+.ring-diagram-unselected-legend-caption {
+	cursor: pointer;
+	fill: #323637;
+	font-size: 14px;
+	font-weight: 400; /*700 - bold; 400 - normal*/
+
+	-webkit-transition: fill, font-size 200ms ease-in-out 0ms;
+	-moz-transition: fill, font-size 200ms ease-in-out 0ms;
+	-o-transition: fill, font-size 200ms ease-in-out 0ms;
+	transition: fill, font-size 200ms ease-in-out 0ms;	
+} /* .ring-diagram-unselected-legend-caption */
+
+.ring-diagram-unselected-legend-caption:hover {
+	fill: #BC0071;
+	font-size: 14.04px;
+}
+
+.ring-diagram-unselected-legend-caption:active {
+	fill: #82044f;
+	font-size: 14.02px;
+}
+
+.ring-diagram-selected-legend-caption {
+	cursor: pointer;
+	fill: #b6006d;
+	font-size: 15px;
+	font-weight: 700; /*700 - bold; 400 - normal*/
+
+	-webkit-transition: fill, font-size 200ms ease-in-out 0ms;
+	-moz-transition: fill, font-size 200ms ease-in-out 0ms;
+	-o-transition: fill, font-size 200ms ease-in-out 0ms;
+	transition: fill, font-size 200ms ease-in-out 0ms;	
+} /* .ring-diagram-selected-legend-caption */
+
+.ring-diagram-selected-legend-caption:hover {
+	fill: #d23694;
+	font-size: 15.04px;
+}
+
+.ring-diagram-selected-legend-caption:active {
+	fill: #82044f;
+	font-size: 15.02px;
+}
